@@ -4,11 +4,11 @@ export EDITOR="nvim"
 
 if [[ $USER != "root" ]]; then
   export STARSHIP_CONFIG=~/.config/starship.toml
+  export BROWSER="librewolf"
   eval "$(starship init zsh)"
   export GPG_TTY=$(tty)
 
   export PATH=$HOME/.local/share/nvim/mason/bin:$HOME/.nimble/bin:$HOME/bin:/usr/local/bin:$HOME/.deno/bin:$HOME/.cargo/bin:$HOME/.spicetify:$HOME/.local/share/coursier/bin:$HOME/.local/bin:$HOME/.local/share/fnm:$HOME/go/bin/:$PATH
-  export PATH=/usr/lib/android-sdk/emulator/:/usr/lib/android-sdk/cmdline-tools/latest/bin:$HOME/flutter/bin:$PATH
   fpath=(~/.zsh $fpath)
   autoload -Uz compinit compinit -u
 
@@ -121,7 +121,9 @@ alias cat="bat --style=plain --paging=never"
 alias tree="eza -T --icons"
 alias grep="grep --color=auto"
 alias t="tree $1"
-alias paru="paru --skipreview --bottomup $1"
+alias paru="paru --bottomup $1"
+alias new="newsboat"
+alias pod="podbit"
 
 alias up="docker compose up"
 alias upt="docker compose -f docker-compose.test.yml up --abort-on-container-exit"

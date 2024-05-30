@@ -28,42 +28,22 @@ function set_hdmi_monitor() {
   xrandr --addmode $HDMI 1920x1080R
 
   if [[ $DISPLAY_PORT_CONNECTED ]];  then
-    xrandr --output "$HDMI" -r 60.0 --mode 1920x1080R --rotate normal --right-of "$DISPLAY_PORT" \
-    --output "$LAPTOP" --mode 1920x1080 --rotate normal
+    xrandr --output "$HDMI" -r 60.0 --mode 1920x1080R --rotate normal --below "$LAPTOP"
   else
-    xrandr --output "$HDMI" -r 60.0 --mode 1920x1080R --rotate normal --right-of "$LAPTOP" \
-    --output "$LAPTOP" --mode 1920x1080 --rotate normal
+    xrandr --output "$HDMI" -r 60.0 --mode 1920x1080R --rotate normal --above "$LAPTOP"
   fi
 }
 
 function set_display_port_1_monitor() {
   xrandr --addmode $DISPLAY_PORT_1 1920x1080R
 
-  if [[ $HDMI_CONNECTED ]]; then
-    xrandr --output "$DISPLAY_PORT_1" -r 75.0 --mode 1920x1080R --rotate normal --below "$LAPTOP" \
-    --output "$LAPTOP" --mode 1920x1080 --rotate normal
-  elif [[ $DISPLAY_PORT_CONNECTED ]]; then
-    xrandr --output "$DISPLAY_PORT_1" -r 75.0 --mode 1920x1080R --rotate normal --below "$LAPTOP" \
-    --output "$LAPTOP" --mode 1920x1080 --rotate normal
-  else
-    xrandr --output "$DISPLAY_PORT_1" -r 75.0 --mode 1920x1080R --rotate normal --right-of "$LAPTOP" \
-      --output "$LAPTOP" --mode 1920x1080 --rotate normal
-  fi
+  xrandr --output "$DISPLAY_PORT_1" -r 75.0 --mode 1920x1080R --rotate normal --below "$LAPTOP"
 }
 
 function set_display_port_monitor() {
   xrandr --addmode $DISPLAY_PORT 1920x1080R
 
-  if [[ $HDMI_CONNECTED ]];  then
-    xrandr --output "$DISPLAY_PORT" -r 75.0 --mode 1920x1080R --rotate normal --left-of "$HDMI" \
-    --output "$LAPTOP" --mode 1920x1080 --rotate normal
-  elif [[ $DISPLAY_PORT_1_CONNECTED ]];  then
-    xrandr --output "$DISPLAY_PORT" -r 75.0 --mode 1920x1080R --rotate normal --left-of "$LAPTOP" \
-    --output "$LAPTOP" --mode 1920x1080 --rotate normal
-  else
-    xrandr --output "$DISPLAY_PORT" -r 75.0 --mode 1920x1080R --rotate normal --right-of "$LAPTOP" \
-    --output "$LAPTOP" --mode 1920x1080 --rotate normal
-  fi
+  xrandr --output "$DISPLAY_PORT" -r 75.0 --mode 1920x1080R --rotate normal --right-of "$LAPTOP"
 }
 
 function set_dual_monitor() {
@@ -94,7 +74,6 @@ udiskie -t &
 nm-applet &
 blueman-adapters &
 picom &
-battery &
 volumeicon &
 redshift -O 4000 &
 solaar -b regular -w hide &

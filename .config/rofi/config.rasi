@@ -115,4 +115,5 @@ configuration {
     me-accept-entry: "MouseDPrimary";
     me-accept-custom: "Control+MouseDPrimary";
 }
-@theme "/usr/share/rofi/themes/ayu-dark.rasi"
+//@theme "./theme/ayu-dark.rasi"
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"

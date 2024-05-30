@@ -1,0 +1,157 @@
+(defvar eww "eww -c $HOME/.config/leftwm/themes/current/eww")
+(defvar ewwDashboard "eww -c $HOME/.config/leftwm/themes/current/eww/dashboard")
+(defvar dashboardIsOpen false)
+(defvar bright false)
+(defvar volum false)
+(defvar systray-is-open false)
+
+(deflisten wmstate "leftwm state")
+
+(defpoll wifiIcon :interval "1s" "scripts/wifi --icon")
+(defpoll wifiName :interval "1s" "scripts/wifi --name")
+
+(defpoll batteryIcon :interval "1s" "scripts/battery --icon")
+(defpoll batteryPercent :interval "1s" "scripts/battery --percent")
+(defpoll volumeIcon :interval "1s" "scripts/volume --icon")
+(defpoll volumePercent :interval "1s" "scripts/volume --percent")
+(defpoll brightnessPercent :interval "1s" "scripts/brightness --percent")
+(defpoll brightnessIcon :interval "1s" "scripts/brightness --icon")
+(defpoll hour	:interval "1s"	"date '+%H'")
+(defpoll min	:interval "1s"	"date '+%M'")
+
+(defpoll dayName :interval "10h" "date '+%A'")
+(defpoll month :interval "10s" "date '+%m'")
+(defpoll day :interval "10s" "date '+%d'")
+(defpoll year :interval "10s" "date '+%Y'")
+
+(defpoll calendarDay :interval "10h" "date '+%d'")
+(defpoll calendarMonth :interval "10h" "scripts/calendar")
+(defpoll calendarYear :interval "10h" "date '+%Y'")
+
+(defwidget workspaces [?number monitor] 
+  (box :orientation 'h' :class "workspaces" :valign "start" :space-evenly true
+    (for tag in '${wmstate.workspaces[monitor].tags}'
+      (button
+        :onclick "leftwm-command 'SendWorkpaceToTag 0 ${tag.index}'"
+        :class "workspace-icon ${tag.focused ? "workspace-focused" : tag.busy ? "workspace-busy": tag.urgent ? "workspace-urgent" : "workspace-empty"}"
+        "${tag.name}"
+      )
+    )
+  )
+)
+
+(defwidget volume []
+  (box :class "volume" :space-evenly true
+    (box :orientation 'h' :space-evenly false
+      (label :class "volume-icon" :text "${volumeIcon}")
+      (label :class "volume-percent" :text "${volumePercent}%")
+    )
+  )
+)
+
+(defwidget battery []
+  (box :class "battery" :orientation 'h' 
+    (label :class "battery-icon" :text "${batteryIcon}")
+    (label :class "battery-percent" :text "${batteryPercent}%")
+  )
+)
+
+(defwidget wifi []
+  (box :class "wifi" :orientation 'h' :tooltip wifiName
+    wifiIcon
+  )
+)
+
+(defwidget brightness []
+  (box :class "brightness" :space-evenly true :orientation 'h'
+    (label :class "brightness-icon" :text "${brightnessIcon}")
+    (label :class "brightness-percent" :text "${brightnessPercent}%")
+  )
+)
+
+(defwidget date []
+  (box :orientation 'h' :class "date"
+    (button
+      (box :orientation "h"  :space-evenly false
+          (label :class "date-icon" :text "")
+          (label :class "date-value" :text "${year}/${month}/${day}")
+          (label :class "time" :text "${hour}:${min}")
+      )
+    )
+  )
+)
+
+(defwidget control []
+  (box :orientation 'h' :space-evenly false :class 'control'
+    (brightness)
+    (battery)
+    (volume)
+    (wifi)
+  )
+)
+
+(defwidget bar [?number monitor]
+  (box :class "bar" :orientation "h" :vexpand false :hexpand false :space-evenly false
+    (top :monitor monitor)
+    (middle)
+    (end)
+  )
+)
+
+(defwindow window-workspaces :monitor 1
+  :geometry (geometry :x "0" :y "-5px" :width "20%" :height "3%" :anchor "bottom left")
+  :reserve (struts :distance "4%" :side "bottom")
+  :wm-ignore false
+  (workspaces :monitor 2)
+)
+
+(defwindow window-bar :monitor 1
+  :geometry (geometry :x "0" :y "0" :width "100%" :height "3%" :anchor "top left")
+  :reserve (struts :distance "4%" :side "top")
+  :wm-ignore true
+  (bar :monitor 2)
+
+)
+
+(defwindow dashboard :monitor 0
+  :geometry (geometry :x "0" :y "0" :width "80%" :height "80%" :anchor "center")
+  (box :orientation 'v' :class 'dashboard'
+    (label :text "asdsadasdasda")
+  )
+)
+
+(defwindow window-systray :monitor 1
+  :geometry (geometry :x "0" :y "-5%" :width "5%" :height "3%" :anchor "bottom right")
+  (box :orientation "v" :class "middle"
+    (systray :pack-direction "ttb" :icon-size 20 :class "tray" :refresh "1" )
+  )
+)
+
+
+(defwidget systray-button []
+  (box :orientation 'v' :class 'systray' :space-evenly false
+    (button
+      :onclick "${eww} ${systray-is-open ? "close" : "open"} window-systray && ${eww} update systray-is-open=${!systray-is-open}"
+      (label :class 'systray-label' :text '')
+    )
+  )
+)
+
+(defwindow window-dashboard-button :monitor 1
+  :geometry (geometry :x "0" :y "15px" :width "3%" :height "3%" :anchor "bottom right")
+  :reserve (struts :distance "4%" :side "bottom")
+  :wm-ignore false
+  :type "dock"
+  (systray-button)
+)
+
+(defwindow window-right :monitor 1
+  :geometry (geometry :x "0" :y "5px" :width "27.5%" :height "3%" :anchor "bottom right")
+  :reserve (struts :distance "4.5%" :side "bottom")
+  :wm-ignore false
+  :type "dock"
+  (box :orientation 'h' :space-evenly false
+    (control :monitor 2)
+    (date)
+  )
+)

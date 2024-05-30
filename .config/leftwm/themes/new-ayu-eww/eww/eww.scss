@@ -1,0 +1,210 @@
+@import "css/variable";
+
+* {
+  all: unset;
+  font-family: $font;
+}
+
+.middle {
+  margin: 0 .5rem 0 .5rem;
+  padding: .5rem .5rem .5rem .5rem;
+	min-height: 14rem;
+	min-width: .5rem;
+  border-radius: 10px;
+  background-color: $background;
+}
+
+.tray {
+  font-size: 20px;
+}
+
+.bar {
+  border-radius: 10px;
+}
+
+.dashboard {
+  background-color: $grey;
+  margin: .9rem .5rem 0 .5rem;
+  padding: .2rem .5rem .5rem .3rem;
+	font-size : 20px;
+  border-radius: 10px;
+  color: $cyan;
+}
+
+.workspaces {
+	font-weight : bold;
+	font-size : 17px;
+  border-radius: 10px;
+  min-height: 2rem;
+  background-color: $background;
+  // top right bottom left
+  margin: -0.2rem 0 0 .5rem;
+  padding: .5rem .5rem .5rem .5rem;
+}
+
+.workspace-icon {
+  background-repeat: no-repeat;
+	min-height: 30px;
+	min-width: 30px;
+}
+
+.workspace-focused {
+  color: $yellow;
+}
+
+.workspace-empty {
+  color: $foreground;
+}
+
+.workspace-urgent {
+  color: $red;
+}
+
+.workspace-busy {
+  color: $blue;
+}
+
+.center {
+  background-color: $background;
+}
+
+.control {
+  background-color: $background;
+  // top right bottom left
+  padding: .5rem .5rem .5rem .4rem;
+  margin: 2.5rem .5rem .5rem 0;
+  border-radius: 10px;
+}
+
+.brightness {
+  color: $yellow;
+  margin: .2rem 1rem .2rem .5rem;
+  font-size: 15px;
+}
+
+.brightness-percent {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.brightness-icon {
+  margin: -0.1rem 0 0 0;
+  font-size: 17px;
+}
+
+.volume {
+  margin: .2rem .5rem .2rem .5rem;
+  color: $blue;
+}
+
+.volume-percent {
+  font-size: 15px;
+  margin: 0 0 0 .3rem;
+  font-weight: bold;
+}
+
+.volume-icon {
+  font-size: 20px;
+  margin: 0 0 0 .3rem;
+}
+
+.battery {
+  margin: .2rem .5rem .2rem .5rem;
+  color: $green;
+}
+
+.battery-icon {
+  font-size: 18px;
+}
+
+.battery-percent {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.date {
+  color: $foreground;
+  background-color: $background;
+  font-weight: bold;
+  border-radius: 10px;
+  // top right bottom left
+  margin: 2.5rem 0 .5rem 0;
+  padding: 0 5px 0 5px;
+}
+
+.date-value {
+  padding: .5rem 5px 5px 5px;
+  font-size: 15px;
+}
+
+.date-icon {
+  color: $yellow;
+  font-size: 15px;
+  padding: 0 .5rem 0 .5rem;
+}
+
+.systray {
+  border-radius: 10px;
+  min-width: 3rem;
+  min-height: 3rem;
+  // top right bottom left
+  margin: .5rem 0 1.1rem .5rem;
+  background-color: $background;
+}
+
+.systray-label {
+	font-size : 20px;
+  margin: 0 0 -3rem 0;
+  padding: .5rem 1rem .5rem .7rem;
+  color: $cyan;
+}
+
+.time {
+  margin: 5px;
+  font-size: 20px;
+}
+
+.wifi {
+  margin: .2rem 1rem .3rem .5rem;
+  font-size: 19px;
+  color: $orange;
+}
+
+.calendar-box {
+  background-color: $background;
+  font-size: 1em;
+  font-weight: bold;
+
+  .calendar-inner-box {
+    padding: 1rem 1rem .2rem;
+    .cal {
+        &.highlight {
+            padding: 10rem;
+        }
+        padding: .8rem .25rem 0rem;
+        margin-left: 10px;
+    }
+  }
+}
+
+calendar:selected {
+  color: $blue;
+}
+
+calendar.header {
+  color: $blue;
+  font-weight: bold;
+}
+
+calendar.button {
+  color: $orange;
+}
+
+calendar.highlight {
+  color: $green;
+  font-weight: bold;
+}
+
+calendar:indeterminate {
+  color: $background;
+}

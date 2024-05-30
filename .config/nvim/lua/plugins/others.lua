@@ -27,7 +27,7 @@ return {
 	},
 	{
 		"ActivityWatch/aw-watcher-vim",
-		enabled = true,
+		enabled = false,
 	},
 	{ "elkowar/yuck.vim", event = "BufRead *.yuck" },
 	{ "tweekmonster/startuptime.vim" },
