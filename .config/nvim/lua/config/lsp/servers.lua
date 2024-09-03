@@ -2,16 +2,26 @@ local util = require("lspconfig.util")
 local lspconfig = require("lspconfig")
 
 return {
-  {
-    package_name = "gopls",
-    enable = true,
+	{
+		package_name = "nixd",
+		enable = true,
+		config = function(on_attach, capabilities)
+			lspconfig.nixd.setup({
+				on_attach,
+				capabilities,
+			})
+		end,
+	},
+	{
+		package_name = "gopls",
+		enable = true,
 		config = function(on_attach, capabilities)
 			lspconfig.gopls.setup({
 				on_attach,
 				capabilities,
 			})
 		end,
-  },
+	},
 	{
 		package_name = "nimlsp",
 		enable = true,

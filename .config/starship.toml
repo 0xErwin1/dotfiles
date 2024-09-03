@@ -181,12 +181,12 @@ symbol = ''
 symbol = ' '
 
 [directory.substitutions]
-"Downloads" = "/ /"
-"Documents" = "/ /"
-"Desktop" = "/ /"
-"Music" = "/  /"
-"Pictures" = "/ /"
-"Videos" = "/  /"
+"Downloads" = "/ "
+"Documents" = "/ "
+"Desktop" = "/ "
+"Music" = "/  "
+"Pictures" = "/ "
+"Videos" = "/  "
 "/dev/" = "/ /"
-".notes" = "/ /"
-".config" = " /"
+".notes" = "/ "
+".config" = " "

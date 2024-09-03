@@ -1,4 +1,7 @@
 return {
+  {
+    "dstein64/vim-startuptime"
+  },
 	{
 		"stevearc/oil.nvim",
 		dependencies = { "echasnovski/mini.icons" },

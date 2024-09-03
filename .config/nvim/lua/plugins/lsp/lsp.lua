@@ -44,6 +44,7 @@ return {
 					dart = { "dart format" },
 					go = { "gofmt" },
 					ignis = { "trim_whitespace" },
+          nix = { "nixfmt" },
 					["_"] = { "trim_whitespace" },
 				},
 				formatters = {

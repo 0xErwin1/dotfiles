@@ -64,6 +64,10 @@ M.setup = function()
 			},
 			expandable_indicator = false,
 			format = function(entry, vim_item)
+        if vim_item.kind == nil then
+          vim_item.kind = ""
+        end
+
 				vim_item.kind = (lspkind.symbolic(vim_item.kind, { mode = "symbol" })) .. " " .. vim_item.kind
 				vim_item.menu = source_names[entry.source.name]
 
@@ -132,7 +136,7 @@ M.setup = function()
 		}),
 	})
 
-	cmp.setup.cmdline("/", {
+	cmp.setup.cmdline({ "/", "?" }, {
 		mapping = cmp.mapping.preset.cmdline(),
 		sources = {
 			{ name = "buffer" },
@@ -146,6 +150,7 @@ M.setup = function()
 		}, {
 			{ name = "cmdline" },
 		}),
+		matching = { disallow_symbol_nonprefix_matching = false },
 	})
 
 	cmp.setup.filetype({
