@@ -35,6 +35,7 @@
 !polybar/*
 !neofetch/*
 !kitty
+!kitty/*
 !pavucontrol.ini
 !leftwm
 !leftwm/**/*
