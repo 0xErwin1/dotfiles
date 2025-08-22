@@ -22,7 +22,17 @@
                                                                        {:autotrigger false}))
                                           (when (client:supports_method :textDocument/documentSymbol)
                                             (let [navic (require :nvim-navic)]
-                                              (navic.attach client args.buf))))
+                                              (navic.attach client args.buf)))
+                                          (vim.api.nvim_set_keymap :n :gd
+                                                                   "<cmd>lua vim.lsp.buf.definition()<CR>"
+                                                                   {:noremap true
+                                                                    :silent true})
+                                          (vim.keymap.set :n :gi
+                                                          "<cmd>lua vim.lsp.buf.implementation()<CR>"
+                                                          {:desc "Go to implementation"})
+                                          (vim.keymap.set :n :gr
+                                                          "<cmd>lua vim.lsp.buf.references()<CR>"
+                                                          {:desc "Go to references"}))
                               :group (vim.api.nvim_create_augroup :lsp {})})
 
 (vim.keymap.set [:n :v] :<leader>ca "<cmd>FzfLua lsp_code_actions<CR>"
@@ -56,7 +66,23 @@
                 "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.WARN})<CR>"
                 {:desc "Previous Warning"})
 
+(vim.keymap.set :n :<leader>fr "<cmd>FzfLua lsp_references<CR>"
+                {:desc "Find References"})
+
+(vim.keymap.set :n :<leader>fi "<cmd>FzfLua lsp_implementations<CR>"
+                {:desc "Go to Implementation"})
+
+(vim.keymap.set :n :<leader>fs "<cmd>FzfLua lsp_live_workspace_symbols<CR>"
+                {:desc "Workspace Symbols"})
+
+(vim.keymap.set :n :<leader>fD "<cmd>FzfLua lsp_workspace_diagnostics<CR>"
+                {:desc "Workspace Diagnostics"})
+
+(vim.keymap.set :n :<leader>fd "<cmd>FzfLua lsp_document_diagnostics<CR>"
+                {:desc "Document Diagnostics"})
+
 (require :config.lsp.mason)
 (require :config.lsp.cmp)
 (require :config.lsp.conform)
 (require :config.lsp.languages)
+
