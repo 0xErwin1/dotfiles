@@ -1,5 +1,6 @@
 (let [treesitter (require :nvim-treesitter.configs)]
   (treesitter.setup {:ensure_installed :all
+                     :ignore_install [:ipkg]
                      :auto_install true
                      :highlight {:enable true
                                  :use_languagetree true
@@ -29,3 +30,4 @@
         :install_info {:branch :main
                        :files [:src/parser.c]
                        :url "https://github.com/Ignis-lang/tree-sitter-ignis.git"}}))
+
