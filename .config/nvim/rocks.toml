@@ -52,3 +52,4 @@ rustaceanvim = "6.7.0"
 nvim-navic = "scm"
 "noice.nvim" = "4.10.0"
 "nui.nvim" = "0.4.0"
+"cmp-async-path" = { git = "https://codeberg.org/FelipeLema/cmp-async-path" }

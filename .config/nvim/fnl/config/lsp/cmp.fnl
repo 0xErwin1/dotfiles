@@ -96,6 +96,7 @@
                         {:group_index 2 :name :copilot}
                         {:name :nvim_lua}
                         {:name :buffer}
+                        {:name :async_path}
                         {:name :treesitter}]
               :view {:entries :custom}
               :window {:completion (cmp.config.window.bordered)
