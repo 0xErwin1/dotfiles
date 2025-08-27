@@ -1,6 +1,7 @@
 (let [fzf (require :fzf-lua)]
   fzf.setup
-  {:files {:color_icons true :file_icons true :multiprocess true}
+  {:profile :fzf-native
+   :files {:color_icons true :file_icons true :multiprocess true}
    :winopts {:col 0.3 :height 0.4 :row 0.99 :width 0.93}})
 
 (let [wk (require :which-key)]
@@ -19,3 +20,4 @@
             :desc "Live Grep"
             :mode :n
             :group :Find}]))
+

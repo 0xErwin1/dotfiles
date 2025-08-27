@@ -27,7 +27,7 @@ copilot-lua = { git = "zbirenbaum/copilot.lua" }
 "rocks-git.nvim" = "2.5.5"
 "hotpot.nvim" = "0.14.8"
 "oil.nvim" = "2.15.0"
-fzf-lua = "0.0.2097"
+fzf-lua = { git = "ibhagwan/fzf-lua" }
 "which-key.nvim" = "3.17.0"
 "neoscroll.nvim" = "0.2.0"
 
