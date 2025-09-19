@@ -7,3 +7,4 @@
 (require :config.tools.autopairs)
 (require :config.tools.surround)
 (require :config.tools.ai)
+(require :config.tools.activity-watcher)

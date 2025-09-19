@@ -1,6 +1,5 @@
 (set vim.g.mapleader " ")
 (set vim.g.maplocalleader " ")
-(vim.keymap.set [:n :v] :<Space> :<Nop> {:noremap true :silent true})
 
 (vim.filetype.add {:extension {:ign :ignis :ion :ion :http :http}})
 

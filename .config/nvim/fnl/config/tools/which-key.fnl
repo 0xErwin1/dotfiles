@@ -1,6 +1,6 @@
 (let [wk (require :which-key)]
   (wk.setup {:preset :helix
-             :spec [{1 :<leader<leader> :group :Explore}
+             :spec [{1 :<leader><leader> :group :Explore}
                     {1 :<leader>b :group :Buffer :icon "󰈙"}
                     {1 :<leader>d :group :Diagnostic :icon "󰌵"}
                     {1 :<leader>D :group :Debug :icon "󰗼"}

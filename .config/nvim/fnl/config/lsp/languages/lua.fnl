@@ -5,6 +5,3 @@
                                   :diagnostics {:globals [:vim]}}}})
 
 (vim.lsp.enable :fennel_ls)
-
-(let [conform (require :conform)]
-  (conform.setup {:formatters_by_ft {:lua [:stylua] :fennel [:fnlfmt]}}))

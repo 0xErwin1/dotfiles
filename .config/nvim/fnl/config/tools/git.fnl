@@ -1,6 +1,6 @@
 (let [gitsigns (require :gitsigns)]
   (gitsigns.setup {:current_line_blame true
-                   :signs {:add {:tex " "}
+                   :signs {:add {:text " "}
                            :change {:text " "}
                            :delete {:text " "}
                            :untracked {:text ""}

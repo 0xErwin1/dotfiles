@@ -30,26 +30,30 @@ copilot-lua = { git = "zbirenbaum/copilot.lua" }
 fzf-lua = { git = "ibhagwan/fzf-lua" }
 "which-key.nvim" = "3.17.0"
 "neoscroll.nvim" = "0.2.0"
+"aw-watcher.nvim" = { git = "lowitea/aw-watcher.nvim" }
 
 # LSP
 nvim-lspconfig = "2.4.0"
 "fidget.nvim" = "1.6.0"
 latex-ls  = { git = "vigoux/ltex-ls.nvim" }
 mason = { git = "mason-org/mason.nvim" }
+mason-lspconfig = { git = "mason-org/mason-lspconfig.nvim" }
 lsp-signature = { git = "ray-x/lsp_signature.nvim" }
 
 # CMP
 nvim-cmp = { git = "hrsh7th/nvim-cmp" }
-nvim-cmp-lsp = { git = "hrsh7th/cmp-nvim-lsp" }
+cmp-nvim-lsp = { git = "hrsh7th/cmp-nvim-lsp" }
 cmp-buffer = { git = "hrsh7th/cmp-buffer" }
 cmp-git = { git = "petertriho/cmp-git" }
 cmp-cmdline = { git = "hrsh7th/cmp-cmdline" }
 cmp-rg = { git = "lukas-reineke/cmp-rg" }
 copilot-cmp = { git = "zbirenbaum/copilot-cmp" }
-cmp-sing = { git = "crazyhulk/cmp-sign" }
+cmp-sign = { git = "crazyhulk/cmp-sign" }
 "lspkind.nvim" = "scm"
 rustaceanvim = "6.7.0"
 nvim-navic = "scm"
 "noice.nvim" = "4.10.0"
 "nui.nvim" = "0.4.0"
 "cmp-async-path" = { git = "https://codeberg.org/FelipeLema/cmp-async-path" }
+cmp-nvim-lua = { git = "hrsh7th/cmp-nvim-lua" }
+cmp-treesitter = { git = "ray-x/cmp-treesitter" }

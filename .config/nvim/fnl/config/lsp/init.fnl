@@ -15,18 +15,12 @@
                                                  (assert (vim.lsp.get_client_by_id args.data.client_id)))
                                           (when (client:supports_method :textDocument/inlayHint)
                                             (vim.lsp.inlay_hint.enable true))
-                                          (when (client:supports_method :textDocument/completion)
-                                            (vim.lsp.completion.enable true
-                                                                       client.id
-                                                                       args.buf
-                                                                       {:autotrigger false}))
                                           (when (client:supports_method :textDocument/documentSymbol)
                                             (let [navic (require :nvim-navic)]
                                               (navic.attach client args.buf)))
-                                          (vim.api.nvim_set_keymap :n :gd
-                                                                   "<cmd>lua vim.lsp.buf.definition()<CR>"
-                                                                   {:noremap true
-                                                                    :silent true})
+                                          (vim.keymap.set :n :gd
+                                                          "<cmd>lua vim.lsp.buf.definition()<CR>"
+                                                          {:desc "Go to definition"})
                                           (vim.keymap.set :n :gi
                                                           "<cmd>lua vim.lsp.buf.implementation()<CR>"
                                                           {:desc "Go to implementation"})

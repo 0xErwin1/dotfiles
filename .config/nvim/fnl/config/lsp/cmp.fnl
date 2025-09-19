@@ -64,7 +64,7 @@
                                                    :<C-j> (cmp.mapping.select_next_item)
                                                    :<C-k> (cmp.mapping.select_prev_item)
                                                    :<CR> (cmp.mapping.confirm {:behavior cmp.ConfirmBehavior.Insert
-                                                                               :select true})
+                                                                               :select false})
                                                    :<S-Tab> (cmp.mapping (fn [fallback]
                                                                            (if (cmp.visible)
                                                                                (cmp.select_prev_item {:behavior cmp.SelectBehavior.Select})
@@ -108,8 +108,5 @@
                      {:mapping (cmp.mapping.preset.cmdline)
                       :matching {:disallow_symbol_nonprefix_matching false}
                       :sources (cmp.config.sources [{:name :path}]
-                                                   [{:name :cmdline}])})
-  (cmp.setup.filetype [:dap-repl :dapui_watches]
-                      {:sources (cmp.config.sources [{:name :dap}
-                                                     {:name :buffer}])}))
+                                                   [{:name :cmdline}])}))
 

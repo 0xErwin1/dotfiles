@@ -18,4 +18,4 @@
 (require :config.ui.themes)
 (require :config.ui.lualine)
 (require :config.ui.colorizer)
-(require :config.ui.bufferline)
+; (require :config.ui.bufferline)

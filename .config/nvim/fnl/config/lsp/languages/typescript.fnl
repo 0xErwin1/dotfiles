@@ -1,6 +1,5 @@
-(vim.lsp.config :tsgo
-                {:cmd [:tsgo :--lsp :--stdio]
-                 :filetypes [:javascript
+(vim.lsp.config :ts_ls
+                { :filetypes [:javascript
                              :javascriptreact
                              :javascript.jsx
                              :typescript
@@ -34,17 +33,3 @@
 
 (vim.lsp.enable :biome)
 (vim.lsp.enable :astro)
-
-(fn formatter [bufnr]
-  (if (. ((. (require :conform) :get_formatter_info) :biome bufnr) :available)
-      {1 :biome :stop_after_first true :timeout_ms 2000}
-      {1 :prettierd 2 :prettier :stop_after_first true :timeout_ms 2000}))
-
-(let [conform (require :conform)]
-  (conform.setup {:formatters_by_ft {:javascript (formatter)
-                                     :typescript (formatter)
-                                     :javascriptreact (formatter)
-                                     :vue (formatter)
-                                     :astro (formatter)
-                                     :typescriptreact (formatter)}}))
-
