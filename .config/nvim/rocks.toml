@@ -6,7 +6,7 @@ treesitter = { git = "0xErwin1/nvim-treesitter"}
 "lualine.nvim" = "scm"
 "nvim-colorizer.lua" = "scm"
 "todo-comments.nvim" = "1.4.0"
-"render-markdown.nvim" = "8.7.0"
+"render-markdown.nvim" = "8.8.0"
 "diffview.nvim" = "scm"
 neovim-ayu = "scm"
 "tokyodark" = { git = "tiagovla/tokyodark.nvim" }
