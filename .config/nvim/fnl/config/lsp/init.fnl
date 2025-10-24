@@ -14,7 +14,7 @@
                                           (local client
                                                  (assert (vim.lsp.get_client_by_id args.data.client_id)))
                                           (when (client:supports_method :textDocument/inlayHint)
-                                            (vim.lsp.inlay_hint.enable true))
+                                            (vim.lsp.inlay_hint.enable true {:bufnr args.buf}))
                                           (when (client:supports_method :textDocument/documentSymbol)
                                             (let [navic (require :nvim-navic)]
                                               (navic.attach client args.buf)))
@@ -79,4 +79,3 @@
 (require :config.lsp.cmp)
 (require :config.lsp.conform)
 (require :config.lsp.languages)
-

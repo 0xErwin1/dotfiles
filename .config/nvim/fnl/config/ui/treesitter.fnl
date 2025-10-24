@@ -29,5 +29,5 @@
        {:filetype [:Ignis :ignis]
         :install_info {:branch :main
                        :files [:src/parser.c]
-                       :url "https://github.com/Ignis-lang/tree-sitter-ignis.git"}}))
+                       :url "https://gitlab.com/0xErwin/tree-sitter-ignis.git"}}))
 

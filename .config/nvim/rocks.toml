@@ -12,6 +12,7 @@ neovim-ayu = "scm"
 "tokyodark" = { git = "tiagovla/tokyodark.nvim" }
 "bufferline.nvim" = "4.9.1"
 nvim-web-devicons = "0.100"
+"treesitter-playgroud" = { git = "nvim-treesitter/playground"}
 
 # Tools
 neogit = "2.0.0"
@@ -50,7 +51,6 @@ cmp-rg = { git = "lukas-reineke/cmp-rg" }
 copilot-cmp = { git = "zbirenbaum/copilot-cmp" }
 cmp-sign = { git = "crazyhulk/cmp-sign" }
 "lspkind.nvim" = "scm"
-rustaceanvim = "6.7.0"
 nvim-navic = "scm"
 "noice.nvim" = "4.10.0"
 "nui.nvim" = "0.4.0"

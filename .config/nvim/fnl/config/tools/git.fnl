@@ -8,7 +8,7 @@
                            :changedelete {:text "󱂧 "}}}))
 
 (let [neogit (require :neogit)]
-  (neogit.setup {:integrations {:diffview true}}))
+  (neogit.setup {:integrations {:diffview true} :kind :vsplit}))
 
 (let [wk (require :which-key)]
   (wk.add [{1 :<leader>g
