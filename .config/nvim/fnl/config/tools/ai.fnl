@@ -1,7 +1,7 @@
 ;;(let [copilot (require :copilot)]
-;; (copilot.setup {:panel {:enable false}
-;;                  :suggestion {:enable false}
-;;                  :filetypes {:. true
+;;  (copilot.setup {:panel {:enabled false}
+;;                  :suggestion {:enabled false}
+;;                  :filetypes {:* true
 ;;                              :yaml true
 ;;                              :markdown true
 ;;                              :help false
@@ -10,4 +10,3 @@
 ;;                              :hgcommit false
 ;;                              :svn false
 ;;                              :cvs false}}))
-;;

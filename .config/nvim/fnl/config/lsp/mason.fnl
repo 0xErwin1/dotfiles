@@ -12,5 +12,4 @@
                                              :vuels
                                              :yamlls
                                              :zls]
-                          :automatic_installation true}))
-
+                          :automatic_installation { :exclude ["rust_analyzer"] }}))

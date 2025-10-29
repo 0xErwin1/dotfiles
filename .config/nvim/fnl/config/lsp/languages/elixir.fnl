@@ -1,3 +1,5 @@
-(vim.lsp.config :elixirls {:cmd [:elixir-ls]})
-
-(vim.lsp.enable :elixirls)
+(let [blink-cmp (require :blink.cmp)]
+  (vim.lsp.config :elixirls 
+                  {:capabilities (blink-cmp.get_lsp_capabilities)
+                   :cmd [:elixir-ls]})
+  (vim.lsp.enable :elixirls))
