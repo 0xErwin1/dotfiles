@@ -94,6 +94,23 @@
   margin: 0 .5rem;
 }
 
+.microphone {
+  margin: 0 .5rem;
+}
+
+.microphone-icon {
+  font-size: 20px;
+  margin: 0 0 .1rem 0;
+}
+
+.microphone-no {
+  color: $green;
+}
+
+.microphone-yes {
+  color: $red;
+}
+
 .brightness {
   color: $yellow;
   font-size: 20px;
@@ -120,10 +137,6 @@
 .battery-percent {
   // up right bottom left
   margin: 0 0 0 .2rem;
-}
-
-.volume-percent,
-.battery-percent {
 }
 
 .brightness-icon,

@@ -12,6 +12,8 @@
 (defpoll batteryPercent :interval "1s" "scripts/battery --percent")
 (defpoll volumeIcon :interval "1s" "scripts/volume --icon")
 (defpoll volumePercent :interval "1s" "scripts/volume --percent")
+(defpoll microphoneIcon :interval "1s" "scripts/microphone --icon")
+(defpoll microphoneStatus :interval "1s" "scripts/microphone --status")
 (defpoll brightnessPercent :interval "1s" "scripts/brightness --percent")
 (defpoll brightnessIcon :interval "1s" "scripts/brightness --icon")
 (defpoll hour :interval "1s" "date '+%H'")
@@ -54,6 +56,12 @@
     (label :class "volume-icon" :text "${volumeIcon}")
     (label :class "volume-percent" :text "${volumePercent}%")))
 
+(defwidget microphone []
+  (box :class "microphone" :orientation "h" :space-evenly false
+    (label :class "microphone-icon microphone-${microphoneStatus}" :text "${microphoneIcon}")
+  )
+)
+
 (defwidget battery []
   (box :class 'battery' :orientation 'h'
     (label :class "battery-icon" :text "${batteryIcon}")
@@ -87,6 +95,7 @@
     (brightness)
     (battery)
     (volume)
+    (microphone)
     (wifi)))
 
 (defwidget left [?number monitor]
