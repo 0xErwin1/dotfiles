@@ -268,4 +268,11 @@ name = "ayu-eww"
 directory = "/home/iperez/.config/leftwm/themes/ayu-eww"
 version = "0.0.0"
 leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "ayu-eww-bottom"
+directory = "/home/iperez/.config/leftwm/themes/ayu-eww-bottom"
+version = "0.0.0"
+leftwm_versions = "*"
 current = true
