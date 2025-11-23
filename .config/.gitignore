@@ -6,6 +6,7 @@
 !tmux
 !vifm
 !alacritty
+!alacritty/*
 !fish
 !starship.toml
 !htop

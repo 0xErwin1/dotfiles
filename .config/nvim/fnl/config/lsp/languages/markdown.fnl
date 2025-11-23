@@ -1,14 +1,14 @@
-(let [render (require :render-markdown)]
-  (render.setup {:latex {:enable false}
-                 :custom {:started {:raw "[>]"
-                                    :rendered ""
-                                    :highlight :RenderMarkdownTableHead}
-                          :deleted {:raw "[~]"
-                                    :rendered ""
-                                    :highlight :RenderMarkdownError}
-                          :waiting {:raw "[@]"
-                                    :rendered "󰥔 "
-                                    :highlight :RenderMarkdownInfo}}}))
+; (let [render (require :render-markdown)]
+;   (render.setup {:latex {:enable false}
+;                  :custom {:started {:raw "[>]"
+;                                     :rendered ""
+;                                     :highlight :RenderMarkdownTableHead}
+;                           :deleted {:raw "[~]"
+;                                     :rendered ""
+;                                     :highlight :RenderMarkdownError}
+;                           :waiting {:raw "[@]"
+;                                     :rendered "󰥔 "
+;                                     :highlight :RenderMarkdownInfo}}}))
 
 (let [blink-cmp (require :blink.cmp)]
   (vim.lsp.config :ltex

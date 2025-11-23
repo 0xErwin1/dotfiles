@@ -23,7 +23,7 @@
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true
   },
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": true,
 
   // --- IA ---
   "agent": {
