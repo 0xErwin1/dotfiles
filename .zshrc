@@ -27,6 +27,10 @@ if [[ $USER != "root" ]]; then
   export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
   export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
+  if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+    source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  fi
+
   export PATH=$HOME/.local/share/nvim/mason/bin:$HOME/.nimble/bin:$HOME/bin:/usr/local/bin:$HOME/.deno/bin:$HOME/.cargo/bin:$HOME/.local/share/coursier/bin:$HOME/.local/bin:$HOME/.local/share/fnm:$HOME/go/bin/:/usr/local/go/bin:$PATH
   fpath=(~/.zsh $fpath)
   autoload -Uz compinit compinit -u
@@ -209,3 +213,5 @@ alias aws-houlak="awsume HOULAK"
 
 alias note="cd ~/.notes"
 alias vn="nvim ~/.notes"
+
+. "$HOME/.local/share/../bin/env"
