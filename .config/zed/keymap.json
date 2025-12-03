@@ -41,7 +41,6 @@
       "alt-q": "workspace::CloseActiveDock"
     }
   },
-  // ---- Split panel and navegation ----
   {
     "context": "VimControl && !menu",
     "bindings": {

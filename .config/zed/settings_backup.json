@@ -1,39 +1,30 @@
 {
-  // --- GENERAL ---
   "autoscroll_on_clicks": true,
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  // --- UI ---
   "icon_theme": "Material Icon Theme",
   "ui_font_size": 16,
   "buffer_font_size": 16.0,
-  "theme": {
-    "mode": "dark",
-    "light": "Ayu Light",
-    "dark": "Ayu Dark"
-  },
+  "theme": "Ayu Dark",
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
 
-  // --- VIM ---
   "vim_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
 
-  // --- IA ---
   "agent": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "grok-4"
+      "model": "claude-opus-4-5"
     },
     "model_parameters": []
   },
-  // --- MCP ---
   "context_servers": {
     "awslabs.aws-documentation-mcp-server": {
       "source": "custom",
