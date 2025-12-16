@@ -1,15 +1,19 @@
-env = COLORTERM=24bit
-env = TERM=xterm-256color
-env = WINIT_X11_SCALE_FACTOR=1.0
-
-font-family = "JetBrainsMono Nerd Font"
-font-size = 13
+# Fonts
+font-family = "JetBrainsMono NerdFont"
+font-size = 14
 font-style = Regular
 
-background-opacity = 0.9
+# Colors
+theme = "Ayu"
 
+# Window
 window-padding-x = 0
 window-padding-y = 0
+background-opacity = 0.9
 
-foreground = B3B1AD
-background = 0A0E14
+# Clipboard
+copy-on-select = false
+
+# Shell
+shell-integration-features = cursor,no-sudo,title,ssh-env
+
