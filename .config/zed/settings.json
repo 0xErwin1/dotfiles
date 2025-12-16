@@ -17,12 +17,43 @@
     "use_smartcase_find": true
   },
   "relative_line_numbers": "enabled",
-
-  "agent": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
+  "format_on_save": "off",
+  "context_servers": {
+    "mcp-server-github": {
+      "enabled": true,
+      "settings": {
+        "github_personal_access_token": "$GITHUB_PERSONAL_ACCESS_TOKEN"
+      }
     },
-    "model_parameters": []
+    "awslabs.aws-documentation-mcp-server": {
+      "enabled": true,
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
+      "env": {
+        "AWS_DOCUMENTATION_PARTITION": "aws",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "git": {
+      "enabled": true,
+      "command": "uvx",
+      "args": [
+        "mcp-server-git"
+      ],
+      "env": {}
+    },
+    "memory": {
+      "enabled": true,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "env": {
+        "MEMORY_FILE_PATH": "~/.config/ia-memory.json"
+      }
+    }
   }
 }

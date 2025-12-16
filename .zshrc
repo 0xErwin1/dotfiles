@@ -214,4 +214,9 @@ alias aws-houlak="awsume HOULAK"
 alias note="cd ~/.notes"
 alias vn="nvim ~/.notes"
 
+if ! command -v zeditor &>/dev/null 2>&1; then
+    alias zed="zeditor"
+    alias z.="zeditor ."
+fi
+
 . "$HOME/.local/share/../bin/env"

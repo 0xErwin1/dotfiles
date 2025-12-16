@@ -13,8 +13,9 @@
     "bindings": {
       "ctrl-s": "workspace::Save",
       "ctrl-S": "workspace::SaveAll",
-      "space space": "file_finder::Toggle",
-      "space /": ["pane::DeploySearch", { "replace_enabled": false }]
+//      "space space": "file_finder::Toggle",
+      "space /": ["pane::DeploySearch", { "replace_enabled": false }],
+      "space c f": "editor::Format"
     }
   },
   {
@@ -93,9 +94,7 @@
       "space f i": "editor::GoToImplementation",
 
       "space f D": "diagnostics::Deploy",
-      "space f d": "editor::ToggleInlineDiagnostics",
-
-      "space g g": "git_panel::ToggleFocus"
+      "space f d": "editor::ToggleInlineDiagnostics"
     }
   },
   {
@@ -132,6 +131,15 @@
   {
     "bindings": {
       "shift-escape": null
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space space": [
+        "task::Spawn",
+        { "task_name": "Television File Finder", "reveal_target": "center" },
+      ]
     }
   }
 ]
