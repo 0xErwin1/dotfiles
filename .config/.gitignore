@@ -42,7 +42,7 @@
 !dunst
 !dunst/*
 !hypr
-!hypr/*
+!hypr/**
 !kitty
 !kitty/*
 !zed
@@ -53,3 +53,4 @@
 !river/*
 !eww
 !eww/*
+!eww/**
