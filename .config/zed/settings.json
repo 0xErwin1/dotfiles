@@ -1,8 +1,14 @@
 {
+  "diagnostics": {
+    "inline": {
+      "update_debounce_ms": 100,
+      "enabled": true
+    }
+  },
   "autoscroll_on_clicks": true,
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "icon_theme": "Material Icon Theme",
   "ui_font_size": 16,
@@ -14,7 +20,7 @@
   "vim_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true,
-    "use_smartcase_find": true
+    "use_smartcase_find": true,
   },
   "relative_line_numbers": "enabled",
   "format_on_save": "off",
@@ -22,38 +28,31 @@
     "mcp-server-github": {
       "enabled": true,
       "settings": {
-        "github_personal_access_token": "$GITHUB_PERSONAL_ACCESS_TOKEN"
-      }
+        "github_personal_access_token": "$GITHUB_ACCESS_TOKEN",
+      },
     },
     "awslabs.aws-documentation-mcp-server": {
       "enabled": true,
       "command": "uvx",
-      "args": [
-        "awslabs.aws-documentation-mcp-server@latest"
-      ],
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
       "env": {
         "AWS_DOCUMENTATION_PARTITION": "aws",
-        "FASTMCP_LOG_LEVEL": "ERROR"
-      }
+        "FASTMCP_LOG_LEVEL": "ERROR",
+      },
     },
     "git": {
       "enabled": true,
       "command": "uvx",
-      "args": [
-        "mcp-server-git"
-      ],
-      "env": {}
+      "args": ["mcp-server-git"],
+      "env": {},
     },
     "memory": {
       "enabled": true,
       "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ],
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
       "env": {
-        "MEMORY_FILE_PATH": "~/.config/ia-memory.json"
-      }
-    }
-  }
+        "MEMORY_FILE_PATH": "~/.config/ia-memory.json",
+      },
+    },
+  },
 }
